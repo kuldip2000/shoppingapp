@@ -1,53 +1,49 @@
 import { BsFillPersonFill } from "react-icons/bs";
-import { FaFaceGrinHearts, FaBagShopping } from "react-icons/fa6";
+import { FaFaceGrinHearts } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FaShoppingBag } from "react-icons/fa";
 
 const Header = () => {
   const bag = useSelector((store) => store.bag);
 
   return (
-    <header>
-      <div className="logo_container">
-        <Link to="/">
-          <img
-            className="myntra_home"
-            src="images/myntra_logo.webp"
-            alt="Myntra Home"
-          />
-        </Link>
-      </div>
-      <nav className="nav_bar">
-        <a href="#">Men</a>
-        <a href="#">Women</a>
-        <a href="#">Kids</a>
-        <a href="#">Home & Living</a>
-        <a href="#">Beauty</a>
-        <a href="#">
-          Studio <sup>New</sup>
-        </a>
+    <header className="navbar flex-row">
+      <Link to="/">
+        <img className="myntra_home" src="images/myntra_logo.webp" alt="logo" />
+      </Link>
+
+      <nav className="nav-links-container flex-row">
+        <p>Men</p>
+        <p>Women</p>
+        <p>Kids</p>
+        <p>Home & Living</p>
+        <p>Beauty</p>
       </nav>
-      <div className="search_bar">
-        <span className="material-symbols-outlined search_icon">search</span>
+      <div className="search-container flex-row center">
+        <search className="search-icon"></search>
         <input
-          className="search_input"
-          placeholder="Search for products, brands and more"
+          className="search-box"
+          placeholder="Search for products, brands..."
         />
       </div>
-      <div className="action_bar">
-        <div className="action_container">
-          <BsFillPersonFill />
-          <span className="action_name">Profile</span>
-        </div>
+      <div className="action-item">
+        <p className="action-icon" />
+        <BsFillPersonFill />
+        <p className="action-text">Profile</p>
+      </div>
 
-        <div className="action_container">
-          <FaFaceGrinHearts />
-          <span className="action_name">Wishlist</span>
-        </div>
+      <div className="action-item">
+        <p className="action-icon" />
+        <FaFaceGrinHearts />
+        <p className="action-text">Wishlist</p>
+      </div>
 
-        <Link className="action_container" to="/bag">
-          <FaBagShopping />
-          <span className="action_name">Bag</span>
+      <div className="action-item">
+        <Link className="action-item" to="/bag">
+          <p className="action-icon" />
+          <FaShoppingBag />
+          <p className="action-text">Bag</p>
           <span className="bag-item-count">{bag.length}</span>
         </Link>
       </div>

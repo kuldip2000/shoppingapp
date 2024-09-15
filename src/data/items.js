@@ -116,5 +116,36 @@ export const DEFAULT_ITEMS = [
           stars: 4.2,
           count: 5200,
       },
+  },
+  {id: '009',
+    image: 'images/9.jpg',
+    company: 'mlb',
+    item_name: 'Men Black Cap',
+    original_price: 400,
+    current_price: 200,
+    discount_percentage: 50,
+    return_period: 14,
+    delivery_date: '12 Oct 2023',
+    rating: {
+        stars: 4.2,
+        count: 5200,
+    },
+
+  },{id: '010',
+    image: 'images/10.jpg',
+    company: 'Arrow',
+    item_name: 'Men pant',
+    original_price: 3000,
+    current_price: 2700,
+    discount_percentage: 10,
+    return_period: 14,
+    delivery_date: '19 Oct 2023',
+    rating: {
+        stars: 4.3,
+        count: 500,
+    },
+
   }
+
+  
 ];
